@@ -57,5 +57,6 @@ Mint tokens: ./build/token-cli action mint-asset
 Create an order: ./build/token-cli action create-order
 For more commands, refer to Hyper-SDK_Project_Step-By-Step_Commands_Run.txt.
 
-Video Demo
-Watch the Project Demo
+## Video Demo  
+[Watch the Project Demo](https://www.loom.com/share/b3995f7eba454c0c8914cf03b142f870)  
+
