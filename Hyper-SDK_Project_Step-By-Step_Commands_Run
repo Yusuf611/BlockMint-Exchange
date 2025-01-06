@@ -1,0 +1,55 @@
+- #Super User
+  sudo su
+  
+- #The First command run
+  go mod tidy 
+
+- #Second Command run
+  ./scripts/run.sh ---> If showing this error[/usr/bin/env: ‘bash\r’: No such file or directory 
+                                           /usr/bin/env: use -[v]S to pass options in shebang lines] 
+
+- # To resolve the previous error do these steps 
+  1. First give all executive file Permission {chmod a+rwx <File-name>}
+  2. sudo apt-get install dos2unix --> dos2unix ./scripts/run.sh # Run this for the .sh file if this previous error show 
+
+
+- #Then Run the run.sh 
+  ./scripts/run.sh
+
+- #if this error shows "your golang environment is misconfigued...please ensure the golang bin folder is in your PATH" Run this command
+  export PATH=$PATH:$(go env GOPATH)/bin
+
+- #Run Again the run.sh file 
+  ./scripts/run.sh
+
+- #Run the build.sh script if this error show run this command {dos2unix ./scripts/build.sh} and Run the build.sh script again
+  ./scripts/build.sh 
+
+- #Run this Command to store the chain ID in the token-cli
+  ./build/token-cli chain import-anr 
+  
+
+- #Run the watch chain command to monitor activity done on blockchain 
+  ./build/token-cli chain watch 
+
+- #Keep this tab as it is where you run all the previous commands and Add a new tab and run the next command in root user
+
+- #Create a assets
+  ./buld/token-cli action creat-asset
+
+- #Mint Tokens (Create a Tokens)
+  ./build/token-cli action mint-asset
+
+- #Cheack the current Balance for (Check if you have minted the tokens successfully)
+  ./build/token-cli key balance
+
+- #Create a OrderBook for the Exchange of the crypto with the token you minted 
+  ./build/token-cli action create-order
+
+- #Exchange the token you mint with the crypto you declared in the orderbook
+  ./build/token-cli action fill-order
+
+- #Close the Order
+  ./build/token-cli action close-order 
+
+- # Now go to the Tab where you run the "./build/token-cli chain watch"  you will see the logs of the token you minted  order you created and the token you exchange  with then end the project 
